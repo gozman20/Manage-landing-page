@@ -199,10 +199,10 @@ export default function Main() {
     <div class='flex'>
        
       < AiOutlineFacebook size={42} class='bg-white'/>
-      <CiYoutube size={42}/>
-      < CiTwitter size={42}/>
-      <FaPinterestP size={42}/>
-      <BsInstagram size={42}/>
+      <CiYoutube size={42} class='bg-white'/>
+      < CiTwitter size={42} class='bg-white'/>
+      <FaPinterestP size={42} class='bg-white'/>
+      <BsInstagram size={42} class='bg-white'/>
     </div>
     </div>
 
