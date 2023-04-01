@@ -196,13 +196,13 @@ export default function Main() {
 <img src='src/images/orange.jfif' />
 </div>
     
-    <div class='flex'>
+    <div class='flex gap-x-2'>
        
-      < AiOutlineFacebook size={42} class='bg-white'/>
-      <CiYoutube size={42} class='bg-white'/>
-      < CiTwitter size={42} class='bg-white'/>
-      <FaPinterestP size={42} class='bg-white'/>
-      <BsInstagram size={42} class='bg-white'/>
+      < AiOutlineFacebook size={30} class='bg-white rounded-lg'/>
+      <CiYoutube size={30} class='bg-white rounded-lg'/>
+      < CiTwitter size={30} class='bg-white rounded-lg'/>
+      <FaPinterestP size={30} class='bg-white rounded-lg'/>
+      <BsInstagram size={30} class='bg-white rounded-lg'/>
     </div>
     </div>
 
