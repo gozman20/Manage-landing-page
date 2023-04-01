@@ -242,7 +242,7 @@ export default function Main() {
             </div>
           </form>
           <div class="hidden text-white md:block">
-            Copyright &copy; 2022, All Rights Reserved
+            Copyright &copy; 2022, All Rights Reserved.
           </div>
         </div>
 
