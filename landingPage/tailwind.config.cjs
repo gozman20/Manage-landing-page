@@ -7,17 +7,22 @@ module.exports = {
  
     extend: {
       colors:{
-        brightRed: 'hsl(12, 88%, 59%)',
-        brightRedLight: 'hsl(12, 88%, 69%)',
+        myorange: '#ff9966',
+        dimBlack:' #b3b3cc',
+        dimBlue:'#f2e6ff',
+        darkBlack:'hsl(0, 100%, 3%)',
         brightRedSupLight: 'hsl(12, 88%, 95%)',
-        darkBlue: 'hsl(228, 39%, 23%)',
-        darkGrayishBlue: 'hsl(227, 12%, 61%)',
-        veryDarkBlue: 'hsl(233, 12%, 13%)',
-        veryPaleRed: 'hsl(13, 100%, 96%)',
-        veryLightGray: 'hsl(0, 0%, 98%)',
-        orange:'hsl(30, 100%, 50%)',
-        shadow:'rgba(0,0,0,0.06);'
-    }
+        brightRed: 'hsl(12, 88%, 59%)',
+      
+    },
+    screens: {
+      xs: "480px",
+      ss: "620px",
+      sm: "768px",
+      md: "1060px",
+      lg: "1200px",
+      xl: "1700px",
+    },
   },
   },
   plugins: [],

@@ -1,71 +1,52 @@
 import React, { useState } from 'react'
+import { links } from '../constants'
+import styles from '../style'
+import Button from './Button'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
 
 export default function Navbar() {
-    const [state,setState]=useState(true)
 
+  const [toggle,setToggle]=useState(false)
 
-   const items=[
-   <a href='#'>Pricing</a>,
-   <a href='#'>Products</a>,<a href='#'>About Us</a>,
-   <a href='#'>Careers</a>,<a href='#'>Community</a>
-]
-
-
-    const toggler=()=>{
-        setState(!state)
-    }
 
   return (
-    // flex container
+
     
-    <div class="container mx-auto px-2  flex md:block justify-between ">
-         
-        <dv class='flex items-center mt-5   justify-between'>
-        <div class='flex '>
-            <img src='src/images/orange.jfif'class='w-16 mr-3' />
-            <h1 class='text-md md:text-3xl font-sm md:font-bold'>Manage</h1>
-         </div>
+    <div className={`${styles.paddingX}  relative`} >
+       <div className={`${styles.boxWidth}`}>
+           <nav className='flex flex-row   justify-between items-center py-6'>
+              <img src='https://raw.githubusercontent.com/bradtraversy/tailwind-landing-page/249d73eaa143aa213a5d56de2b2a941f68b20a7a/img/logo.svg ' alt='' className='w-[120px] h-[30px]'/>
+              
+              
+              <div className='sm:flex flew-row justify-center items-center hidden space-x-[10px]'>
+              <ul className='sm:flex flex-row justify-end items-center gap-x-3 '>
+                  {links.map((link,index)=>(
+                
+                <li key={link.id} href={`#${link.id}`} className='hover:bg-buttonhover font-semibold cursor-pointer rounded-full px-2 text-[16px] py-1'>{link.title}</li>
+                ))}
+                
+              </ul>
 
-           <div class='hidden md:flex items-center space-x-2   text-sm '>
-                  <div className='hover:bg-orange hover:rounded-full p-2 px-4'>
-                Pricing
-                    </div>
-           <div class='hover:bg-orange hover:rounded-full p-2 px-4'>
-            Products
-           </div>
-           <div class='hover:bg-orange hover:rounded-full p-2 px-4'>
-            About Us
-           </div>
-           <div class='hover:bg-orange hover:rounded-full p-2 px-4'> 
-            Careers
-           </div>
-           <div class='hover:bg-orange hover:rounded-full p-2 px-4 '>
-            Community
-           </div>
-           </div>
-           <button class='hidden md:block hover:bg-orange bg-brightRedLight text-white p-3  pt-2 px-6 rounded-full'>Get started</button>
-        </dv>
-        <button onClick={toggler} class='flex items-center -mt-5'>
-        {state? <GiHamburgerMenu size={30} class='md:hidden '/> :
-         <AiOutlineClose size={30} class='md:hidden'/> }
-        </button>
-      
-       
-  {
-  state===false && <div class={`md:hidden  absolute p-2 top-10 right-10  bg-slate-100 h-96 w-[200px] duration-700 `}>
-<div class='flex items-center'>
-    <img src='src/images/orange.jfif' class='w-12 mr-3'/>
-    <div class='font-semibold'>Manage</div>
-</div>
-<ul class='text-black-100 text-xl mt-6'>
-    {items.map((item,id)=>(
-        <li key={id} class={`text-sm flex items-center  '' duration-500  cursor-pointer p-2  hover:bg-brightRed rounded-lg`}>{item}</li>
-    ))}
-</ul>
-    </div>}
+              <Button />
+              </div>
+             
+             
 
-    </div>
+            {toggle? <AiOutlineClose className='sm:hidden text-[20px]' onClick={()=>setToggle((prev)=>!prev)}/>
+            :
+            <GiHamburgerMenu className='sm:hidden text-[20px]' onClick={()=>setToggle((prev)=>!prev)}/>} 
+
+
+             {toggle && <ul className='sm:hidden flex flex-col bg-myorange min-w-[120px] justify-center items-center gap-y-3 absolute top-[50px] right-10'>
+                  {links.map((link,index)=>(
+                
+                <li key={link.id} className='hover:bg-buttonhover font-semibold cursor-pointer rounded-full px-2 text-[16px] py-1'>{link.title}</li>
+                ))}
+             </ul>}
+
+              </nav>
+     </div>
+     </div>
   )
 }
